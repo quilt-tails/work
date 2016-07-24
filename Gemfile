@@ -19,6 +19,7 @@ end
 group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
+  gem 'guard'
   gem 'guard-minitest'
 end
 
