@@ -1,0 +1,9 @@
+<li id="memo-<%= memo.id %>">
+  <span class="timestamp"><%= time_ago_in_words(memo.created_at) %>
+    <% if current_user?(memo.user) %>
+      <%= link_to "delete", memo, method: :delete,
+            data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+  <span class="content"><%= memo.content %></span>
+</li>

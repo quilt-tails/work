@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :memos, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -67,6 +68,12 @@ class User < ActiveRecord::Base
    def password_reset_expired?
      reset_sent_at < 2.hours.ago
    end
+
+   # 試作feedの定義
+  # 完全な実装は第12章「ユーザーをフォローする」を参照してください。
+  def feed
+    Memo.where("user_id = ?", id)
+  end
 
    private
 

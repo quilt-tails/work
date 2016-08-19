@@ -1,8 +1,10 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div class="col-md-4">
-    <h1>
-      <%= @user.name %>
-    </h1>
+  <div class="col-md-12">
+    <% if @user.memos.any? %>
+      <ol class="memos">
+        <%= render @memos %>
+      </ol>
+    <% end %>
   </div>
 </div>

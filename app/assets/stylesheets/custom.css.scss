@@ -140,6 +140,7 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+  height: 100px;
 }
 
 input {
@@ -175,4 +176,24 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* memos */
+
+.memos {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
 }
